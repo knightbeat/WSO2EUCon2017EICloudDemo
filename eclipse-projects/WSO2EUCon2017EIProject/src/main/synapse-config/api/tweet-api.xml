@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/tweet" name="tweet-api" xmlns="http://ws.apache.org/ns/synapse">
+  <resource methods="POST" protocol="http" uri-template="/status">
+    <inSequence>
+      <property expression="json-eval($.message)" name="Tweet"
+        scope="default" type="STRING"/>
+      <sequence key="apology-tweet-sq"/>
+      <respond/>
+    </inSequence>
+    <outSequence/>
+    <faultSequence/>
+  </resource>
+</api>

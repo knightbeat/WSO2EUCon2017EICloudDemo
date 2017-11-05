@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inboundEndpoint name="sensor-data-file-read-iep"
+  onError="train-events-on-prem-error-sq" protocol="file"
+  sequence="train-events-to-cloud-sq" suspend="false" xmlns="http://ws.apache.org/ns/synapse">
+  <parameters>
+    <parameter name="interval">1000</parameter>
+    <parameter name="sequential">true</parameter>
+    <parameter name="coordination">true</parameter>
+    <parameter name="transport.vfs.ContentType">text/plain</parameter>
+    <parameter name="transport.vfs.LockReleaseSameNode">false</parameter>
+    <parameter name="transport.vfs.AutoLockRelease">false</parameter>
+    <parameter name="transport.vfs.ActionAfterFailure">MOVE</parameter>
+    <parameter name="transport.vfs.ActionAfterProcess">DELETE</parameter>
+    <parameter name="transport.vfs.FileURI">file://C:/wso2eucon2017files/in/</parameter>
+    <parameter name="transport.vfs.MoveAfterFailure">file://C:/wso2eucon2017files/faulty/</parameter>
+    <parameter name="transport.vfs.DistributedLock">false</parameter>
+    <parameter name="transport.vfs.FileNamePattern">.*.csv</parameter>
+    <parameter name="transport.vfs.MoveAfterProcess">file://C:/wso2eucon2017files/processed/</parameter>
+    <parameter name="transport.vfs.Locking">disable</parameter>
+    <parameter name="transport.vfs.FileSortAttribute">none</parameter>
+    <parameter name="transport.vfs.FileSortAscending">true</parameter>
+    <parameter name="transport.vfs.CreateFolder">true</parameter>
+    <parameter name="transport.vfs.Streaming">false</parameter>
+    <parameter name="transport.vfs.Build">false</parameter>
+  </parameters>
+</inboundEndpoint>

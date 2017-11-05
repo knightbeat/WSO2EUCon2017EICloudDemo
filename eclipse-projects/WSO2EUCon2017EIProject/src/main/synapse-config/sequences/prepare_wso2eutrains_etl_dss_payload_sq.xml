@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="prepare_wso2eutrains_etl_dss_payload_sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <payloadFactory media-type="xml">
+    <format>
+      <p:insert_SENSORS_DATA_operation xmlns:p="http://dss.wso2eutrains.com">
+        <xs:SENSOR_POST xmlns:xs="http://dss.wso2eutrains.com">$1</xs:SENSOR_POST>
+        <xs:TRAIN_ID xmlns:xs="http://dss.wso2eutrains.com">$2</xs:TRAIN_ID>
+        <xs:DEPARTURE_TIME xmlns:xs="http://dss.wso2eutrains.com">$3</xs:DEPARTURE_TIME>
+        <xs:VELOCITY xmlns:xs="http://dss.wso2eutrains.com">$4</xs:VELOCITY>
+        <xs:OUTER_ELEVATION xmlns:xs="http://dss.wso2eutrains.com">$5</xs:OUTER_ELEVATION>
+        <xs:CURVATURE xmlns:xs="http://dss.wso2eutrains.com">$6</xs:CURVATURE>
+        <xs:WINDOW_ID xmlns:xs="http://dss.wso2eutrains.com">$7</xs:WINDOW_ID>
+      </p:insert_SENSORS_DATA_operation>
+    </format>
+    <args>
+      <arg evaluator="xml" expression="get-property('uri.var.SensorPost')"/>
+      <arg evaluator="xml" expression="get-property('uri.var.TrainID')"/>
+      <arg evaluator="xml" expression="get-property('uri.var.DepartureTime')"/>
+      <arg evaluator="xml" expression="get-property('uri.var.Velocity')"/>
+      <arg evaluator="xml" expression="get-property('uri.var.OuterElevation')"/>
+      <arg evaluator="xml" expression="get-property('uri.var.Curvature')"/>
+      <arg evaluator="xml" expression="get-property('uri.var.WindowID')"/>
+    </args>
+  </payloadFactory>
+  <property name="SOAPAction" scope="transport" type="STRING" value="urn:insert_SENSORS_DATA_operation"/>
+</sequence>

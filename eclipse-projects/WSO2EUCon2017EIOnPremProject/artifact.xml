@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="sensor-data-file-read-iep" groupId="com.wso2.WSO2EUCon2017EIOnPremProject.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/sensor-data-file-read-iep.xml</file>
+    </artifact>
+    <artifact name="csv-to-xml-sq" groupId="com.wso2.WSO2EUCon2017EIOnPremProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/csv-to-xml-sq.xml</file>
+    </artifact>
+    <artifact name="csv-to-xml-le" groupId="com.wso2.WSO2EUCon2017EIOnPremProject.local-entry" version="1.0.0" type="synapse/local-entry" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/local-entries/csv-to-xml-le.xml</file>
+    </artifact>
+    <artifact name="train-events-to-cloud-sq" groupId="com.wso2.WSO2EUCon2017EIOnPremProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/train-events-to-cloud-sq.xml</file>
+    </artifact>
+    <artifact name="train-events-on-prem-error-sq" groupId="com.wso2.WSO2EUCon2017EIOnPremProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/train-events-on-prem-error-sq.xml</file>
+    </artifact>
+    <artifact name="build-cloud-api-payload-sq" groupId="com.wso2.WSO2EUCon2017EIOnPremProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/build-cloud-api-payload-sq.xml</file>
+    </artifact>
+    <artifact name="railway-sensor-data-api-ep" groupId="com.wso2.WSO2EUCon2017EIOnPremProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/railway-sensor-data-api-ep.xml</file>
+    </artifact>
+</artifacts>

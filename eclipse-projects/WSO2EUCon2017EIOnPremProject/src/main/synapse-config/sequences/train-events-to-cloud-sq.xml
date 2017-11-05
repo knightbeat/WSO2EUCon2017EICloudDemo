@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="train-events-to-cloud-sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <sequence key="csv-to-xml-sq"/>
+  <property
+    expression="fn:substring-after(get-property('MessageID'), 'urn:uuid:')"
+    name="WindowID" scope="default" type="STRING"/>
+  <iterate expression="//TRAIN_EVENTS/TRAIN_EVENT">
+    <target>
+      <sequence>
+        <sequence key="build-cloud-api-payload-sq"/>
+        <log level="full"/>
+        <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+        <send/>
+      </sequence>
+    </target>
+  </iterate>
+</sequence>

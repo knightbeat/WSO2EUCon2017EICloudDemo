@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="csv-to-xml-sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <smooks config-key="csv-to-xml-le" description="csv2xml">
+    <input type="text"/>
+    <output type="xml"/>
+  </smooks>
+  <log level="full"/>
+</sequence>

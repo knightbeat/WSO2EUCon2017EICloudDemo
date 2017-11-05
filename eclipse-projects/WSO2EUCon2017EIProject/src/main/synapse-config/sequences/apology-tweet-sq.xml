@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="apology-tweet-sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <property name="message-1" scope="default" type="STRING" value="We applogize for the delay of train service "/>
+  <property
+    expression="fn:concat(get-property('message-1'), get-property('uri.var.DepartureTime'))"
+    name="message-2" scope="default" type="STRING"/>
+  <property name="message-3" scope="default" type="STRING" value=" to London St Pancras"/>
+  <property
+    expression="fn:concat(get-property('message-2'), get-property('message-3'))"
+    name="Tweet" scope="default" type="STRING"/>
+  <twitter.init>
+    <consumerKey>dVZ8GU1c2cmMzPyCdbaH03rZ6</consumerKey>
+    <consumerSecret>3ohtddYdPmmnTW5h00Xgogzl315VSoPVvfXUVO9T9afKVKkwPy</consumerSecret>
+    <accessToken>926503614046187520-BcX0wYd80VKKXP11pPy44durLTN48MN</accessToken>
+    <accessTokenSecret>9BIZBERiXqvDEVU4nD6oMIoFmqjtIZ32i7oaMOpm0Q5Qy</accessTokenSecret>
+  </twitter.init>
+  <twitter.updateStatus>
+    <status>{$ctx:Tweet}</status>
+  </twitter.updateStatus>
+</sequence>

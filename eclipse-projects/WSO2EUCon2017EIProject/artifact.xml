@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="send-to-mq-on-prem-sq" groupId="com.wso2.WSO2EUCon2017EIProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/send-to-mq-on-prem-sq.xml</file>
+    </artifact>
+    <artifact name="cloud-to-dc-test-api" groupId="com.wso2.WSO2EUCon2017EIProject.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/cloud-to-dc-test-api.xml</file>
+    </artifact>
+    <artifact name="apology-tweet-sq" groupId="com.wso2.WSO2EUCon2017EIProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/apology-tweet-sq.xml</file>
+    </artifact>
+    <artifact name="tweet-api" groupId="com.wso2.WSO2EUCon2017EIProject.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/tweet-api.xml</file>
+    </artifact>
+    <artifact name="prepare_wso2eutrains_etl_dss_payload_sq" groupId="com.wso2.WSO2EUCon2017EIProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/prepare_wso2eutrains_etl_dss_payload_sq.xml</file>
+    </artifact>
+    <artifact name="railway-sensor-events-api" groupId="com.wso2.WSO2EUCon2017EIProject.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/railway-sensor-events-api.xml</file>
+    </artifact>
+    <artifact name="preserve-event-values-sq" groupId="com.wso2.WSO2EUCon2017EIProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/preserve-event-values-sq.xml</file>
+    </artifact>
+    <artifact name="wso2eutrains-dss-ep" groupId="com.wso2.WSO2EUCon2017EIProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/wso2eutrains-dss-ep.xml</file>
+    </artifact>
+    <artifact name="invoke-data-service-sq" groupId="com.wso2.WSO2EUCon2017EIProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/invoke-data-service-sq.xml</file>
+    </artifact>
+    <artifact name="trigger-actions-sq" groupId="com.wso2.WSO2EUCon2017EIProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/trigger-actions-sq.xml</file>
+    </artifact>
+    <artifact name="delay-check-service-ep" groupId="com.wso2.WSO2EUCon2017EIProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/delay-check-service-ep.xml</file>
+    </artifact>
+    <artifact name="check-delays-sq" groupId="com.wso2.WSO2EUCon2017EIProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/check-delays-sq.xml</file>
+    </artifact>
+    <artifact name="risk-check-service-ep" groupId="com.wso2.WSO2EUCon2017EIProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/risk-check-service-ep.xml</file>
+    </artifact>
+</artifacts>

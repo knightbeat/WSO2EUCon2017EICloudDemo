@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/railway-sensor-data" name="railway-sensor-events-api" xmlns="http://ws.apache.org/ns/synapse">
+  <resource methods="POST" protocol="http" uri-template="/events">
+    <inSequence>
+      <property name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
+      <log level="custom">
+        <property name="RECEIVED EVENT BY" value="railway-sensor-events-api"/>
+      </log>
+      <sequence key="preserve-event-values-sq"/>
+      <clone>
+        <target>
+          <sequence>
+            <sequence key="invoke-data-service-sq"/>
+          </sequence>
+        </target>
+        <target>
+          <sequence>
+            <sequence key="trigger-actions-sq"/>
+          </sequence>
+        </target>
+      </clone>
+    </inSequence>
+    <outSequence>
+      <log level="full"/>
+    </outSequence>
+    <faultSequence/>
+  </resource>
+</api>

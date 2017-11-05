@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="send-to-mq-on-prem-sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+  <send>
+    <endpoint>
+      <address trace="disable" uri="jms:/CompletedEvents?transport.jms.ConnectionFactoryJNDIName=QueueConnectionFactory&amp;java.naming.factory.initial=org.wso2.andes.jndi.PropertiesFileInitialContextFactory&amp;java.naming.provider.url=conf/jndi.properties&amp;transport.jms.DestinationType=queue"/>
+    </endpoint>
+  </send>
+</sequence>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="build-cloud-api-payload-sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <payloadFactory description="Many2OnePF" media-type="json">
+    <format>{"WindowID":"$1","event":{"SensorPost":"$2","TrainID":"$3","DepartureTime":"$4","Velocity":"$5","OuterElevation":"$6","Curvature":"$7"}}</format>
+    <args>
+      <arg evaluator="xml" expression="get-property('WindowID')"/>
+      <arg evaluator="xml" expression="//SENSOR_POST/text()"/>
+      <arg evaluator="xml" expression="//TRAIN_ID/text()"/>
+      <arg evaluator="xml" expression="//DEPARTURE_TIME/text()"/>
+      <arg evaluator="xml" expression="//VELOCITY/text()"/>
+      <arg evaluator="xml" expression="//OUTER_ELEVATION/text()"/>
+      <arg evaluator="xml" expression="//CURVATURE/text()"/>
+    </args>
+  </payloadFactory>
+</sequence>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="delay-check-service-ep" xmlns="http://ws.apache.org/ns/synapse">
+  <http method="get" trace="disable" uri-template="http://localhost:8081/delay-checker/sensor-event?trainID={uri.var.TrainID}&amp;departureTime={uri.var.DepartureTime}&amp;sensorPost={uri.var.SensorPost}"/>
+</endpoint>

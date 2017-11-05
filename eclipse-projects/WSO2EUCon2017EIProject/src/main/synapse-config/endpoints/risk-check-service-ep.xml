@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="risk-check-service-ep" xmlns="http://ws.apache.org/ns/synapse">
+  <http method="get" trace="disable" uri-template="http://localhost:8080/risk-events/velocity?velocity={uri.var.Velocity}&amp;outerElevation={uri.var.OuterElevation}&amp;curvature={uri.var.Curvature}"/>
+</endpoint>

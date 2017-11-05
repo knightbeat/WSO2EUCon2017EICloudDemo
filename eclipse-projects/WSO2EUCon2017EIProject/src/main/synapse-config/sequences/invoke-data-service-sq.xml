@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="invoke-data-service-sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <sequence key="prepare_wso2eutrains_etl_dss_payload_sq"/>
+  <log level="full"/>
+  <log level="custom">
+    <property name="SENDING PAYLOAD TO" value="wso2eutrains-dss-ep"/>
+  </log>
+  <property name="OUT_ONLY" scope="default" type="STRING" value="true"/>
+  <send>
+    <endpoint key="wso2eutrains-dss-ep"/>
+  </send>
+</sequence>

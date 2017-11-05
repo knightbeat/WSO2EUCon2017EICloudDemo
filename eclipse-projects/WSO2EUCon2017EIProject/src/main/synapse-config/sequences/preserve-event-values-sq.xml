@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="preserve-event-values-sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <property expression="json-eval($.event.SensorPost)"
+    name="uri.var.SensorPost" scope="default" type="STRING"/>
+  <property expression="json-eval($.event.TrainID)"
+    name="uri.var.TrainID" scope="default" type="STRING"/>
+  <property expression="json-eval($.event.DepartureTime)"
+    name="uri.var.DepartureTime" scope="default" type="STRING"/>
+  <property expression="json-eval($.event.Velocity)"
+    name="uri.var.Velocity" scope="default" type="STRING"/>
+  <property expression="json-eval($.event.OuterElevation)"
+    name="uri.var.OuterElevation" scope="default" type="STRING"/>
+  <property expression="json-eval($.event.Curvature)"
+    name="uri.var.Curvature" scope="default" type="STRING"/>
+  <property expression="json-eval($.WindowID)" name="uri.var.WindowID"
+    scope="default" type="STRING"/>
+</sequence>

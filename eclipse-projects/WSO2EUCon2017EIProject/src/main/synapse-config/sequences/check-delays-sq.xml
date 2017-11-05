@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="check-delays-sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <call>
+    <endpoint key="delay-check-service-ep"/>
+  </call>
+</sequence>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="RailwaySensorsETLDataService" groupId="com.wso2.WSO2EUCon2017DSProject.dataservice" version="1.0.0" type="service/dataservice" serverRole="DataServicesServer">
+        <file>dataservice/RailwaySensorsETLDataService.dbs</file>
+    </artifact>
+</artifacts>

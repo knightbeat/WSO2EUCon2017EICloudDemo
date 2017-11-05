@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="trigger-actions-sq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+  <sequence key="check-delays-sq"/>
+  <property expression="json-eval($.delayed)" name="uri.var.isDelayed"
+    scope="default" type="STRING"/>
+  <switch source="get-property('uri.var.isDelayed')">
+    <case regex="true">
+      <sequence key="apology-tweet-sq"/>
+    </case>
+    <default>
+      <log level="custom">
+        <property name="REPORTED" value="NO DELAYS"/>
+      </log>
+    </default>
+  </switch>
+</sequence>

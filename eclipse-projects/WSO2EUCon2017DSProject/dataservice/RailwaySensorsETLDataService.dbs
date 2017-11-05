@@ -1,0 +1,142 @@
+<data name="RailwaySensorsETLDataService" serviceNamespace="http://dss.wso2eutrains.com">
+    <config id="default">
+        <property name="username">chat_rACKhawA</property>
+        <property name="password">wso2123</property>
+        <property name="url">jdbc:mysql://mysql.storage.cloud.wso2.com:3306/WSO2EU_TRAINS_DB_wso2demo4574</property>
+        <property name="driverClassName">com.mysql.jdbc.Driver</property>
+    </config>
+    <query id="select_all_SENSORS_DATA_query" useConfig="default">
+        <sql>SELECT RECORD_ID, SENSOR_POST, TRAIN_ID, DEPARTURE_TIME, VELOCITY, OUTER_ELEVATION, CURVATURE, WINDOW_ID FROM SENSORS_DATA</sql>
+        <result element="SENSORS_DATACollection" rowName="SENSORS_DATA">
+            <element column="RECORD_ID" name="RECORD_ID" xsdType="xs:integer"/>
+            <element column="SENSOR_POST" name="SENSOR_POST" xsdType="xs:string"/>
+            <element column="TRAIN_ID" name="TRAIN_ID" xsdType="xs:string"/>
+            <element column="DEPARTURE_TIME" name="DEPARTURE_TIME" xsdType="xs:string"/>
+            <element column="VELOCITY" name="VELOCITY" xsdType="xs:string"/>
+            <element column="OUTER_ELEVATION" name="OUTER_ELEVATION" xsdType="xs:string"/>
+            <element column="CURVATURE" name="CURVATURE" xsdType="xs:string"/>
+            <element column="WINDOW_ID" name="WINDOW_ID" xsdType="xs:string"/>
+        </result>
+    </query>
+    <query id="delete_SENSORS_DATA_query" useConfig="default">
+        <sql>DELETE FROM SENSORS_DATA WHERE RECORD_ID=?</sql>
+        <result element="UpdatedRowCount" rowName="" useColumnNumbers="true">
+            <element column="1" name="Value" xsdType="integer"/>
+        </result>
+        <param name="RECORD_ID" ordinal="1" sqlType="INTEGER"/>
+    </query>
+    <query id="select_with_key_SENSORS_DATA_query" useConfig="default">
+        <sql>SELECT RECORD_ID, SENSOR_POST, TRAIN_ID, DEPARTURE_TIME, VELOCITY, OUTER_ELEVATION, CURVATURE, WINDOW_ID FROM SENSORS_DATA WHERE RECORD_ID=?</sql>
+        <result element="SENSORS_DATACollection" rowName="SENSORS_DATA">
+            <element column="RECORD_ID" name="RECORD_ID" xsdType="xs:integer"/>
+            <element column="SENSOR_POST" name="SENSOR_POST" xsdType="xs:string"/>
+            <element column="TRAIN_ID" name="TRAIN_ID" xsdType="xs:string"/>
+            <element column="DEPARTURE_TIME" name="DEPARTURE_TIME" xsdType="xs:string"/>
+            <element column="VELOCITY" name="VELOCITY" xsdType="xs:string"/>
+            <element column="OUTER_ELEVATION" name="OUTER_ELEVATION" xsdType="xs:string"/>
+            <element column="CURVATURE" name="CURVATURE" xsdType="xs:string"/>
+            <element column="WINDOW_ID" name="WINDOW_ID" xsdType="xs:string"/>
+        </result>
+        <param name="RECORD_ID" ordinal="1" sqlType="INTEGER"/>
+    </query>
+    <query id="insert_SENSORS_DATA_query" returnGeneratedKeys="true" useConfig="default">
+        <sql>INSERT INTO SENSORS_DATA(SENSOR_POST,TRAIN_ID,DEPARTURE_TIME,VELOCITY,OUTER_ELEVATION,CURVATURE,WINDOW_ID) VALUES(?,?,?,?,?,?,?)</sql>
+        <result element="UpdatedRowCount" rowName="" useColumnNumbers="true">
+            <element column="1" name="Value" xsdType="integer"/>
+            <element column="1" name="ID" xsdType="integer"/>
+        </result>
+        <param name="SENSOR_POST" ordinal="1" sqlType="STRING"/>
+        <param name="TRAIN_ID" ordinal="2" sqlType="STRING"/>
+        <param name="DEPARTURE_TIME" ordinal="3" sqlType="STRING"/>
+        <param name="VELOCITY" ordinal="4" sqlType="STRING"/>
+        <param name="OUTER_ELEVATION" ordinal="5" sqlType="STRING"/>
+        <param name="CURVATURE" ordinal="6" sqlType="STRING"/>
+        <param name="WINDOW_ID" ordinal="7" sqlType="STRING"/>
+    </query>
+    <query id="update_SENSORS_DATA_query" useConfig="default">
+        <sql>UPDATE SENSORS_DATA SET SENSOR_POST=?,TRAIN_ID=?,DEPARTURE_TIME=?,VELOCITY=?,OUTER_ELEVATION=?,CURVATURE=?,WINDOW_ID=? WHERE RECORD_ID=?</sql>
+        <result element="UpdatedRowCount" rowName="" useColumnNumbers="true">
+            <element column="1" name="Value" xsdType="integer"/>
+        </result>
+        <param name="SENSOR_POST" ordinal="1" sqlType="STRING"/>
+        <param name="TRAIN_ID" ordinal="2" sqlType="STRING"/>
+        <param name="DEPARTURE_TIME" ordinal="3" sqlType="STRING"/>
+        <param name="VELOCITY" ordinal="4" sqlType="STRING"/>
+        <param name="OUTER_ELEVATION" ordinal="5" sqlType="STRING"/>
+        <param name="CURVATURE" ordinal="6" sqlType="STRING"/>
+        <param name="WINDOW_ID" ordinal="7" sqlType="STRING"/>
+        <param name="RECORD_ID" ordinal="8" sqlType="INTEGER"/>
+    </query>
+    <operation name="update_SENSORS_DATA_operation">
+        <call-query href="update_SENSORS_DATA_query">
+            <with-param name="VELOCITY" query-param="VELOCITY"/>
+            <with-param name="SENSOR_POST" query-param="SENSOR_POST"/>
+            <with-param name="WINDOW_ID" query-param="WINDOW_ID"/>
+            <with-param name="TRAIN_ID" query-param="TRAIN_ID"/>
+            <with-param name="DEPARTURE_TIME" query-param="DEPARTURE_TIME"/>
+            <with-param name="CURVATURE" query-param="CURVATURE"/>
+            <with-param name="OUTER_ELEVATION" query-param="OUTER_ELEVATION"/>
+            <with-param name="RECORD_ID" query-param="RECORD_ID"/>
+        </call-query>
+    </operation>
+    <operation name="insert_SENSORS_DATA_operation">
+        <call-query href="insert_SENSORS_DATA_query">
+            <with-param name="VELOCITY" query-param="VELOCITY"/>
+            <with-param name="SENSOR_POST" query-param="SENSOR_POST"/>
+            <with-param name="WINDOW_ID" query-param="WINDOW_ID"/>
+            <with-param name="TRAIN_ID" query-param="TRAIN_ID"/>
+            <with-param name="DEPARTURE_TIME" query-param="DEPARTURE_TIME"/>
+            <with-param name="CURVATURE" query-param="CURVATURE"/>
+            <with-param name="OUTER_ELEVATION" query-param="OUTER_ELEVATION"/>
+        </call-query>
+    </operation>
+    <operation name="select_all_SENSORS_DATA_operation">
+        <call-query href="select_all_SENSORS_DATA_query"/>
+    </operation>
+    <operation name="select_with_key_SENSORS_DATA_operation">
+        <call-query href="select_with_key_SENSORS_DATA_query">
+            <with-param name="RECORD_ID" query-param="RECORD_ID"/>
+        </call-query>
+    </operation>
+    <operation name="delete_SENSORS_DATA_operation">
+        <call-query href="delete_SENSORS_DATA_query">
+            <with-param name="RECORD_ID" query-param="RECORD_ID"/>
+        </call-query>
+    </operation>
+    <resource method="POST" path="/records">
+        <call-query href="insert_SENSORS_DATA_query">
+            <with-param name="SENSOR_POST" query-param="SENSOR_POST"/>
+            <with-param name="TRAIN_ID" query-param="TRAIN_ID"/>
+            <with-param name="DEPARTURE_TIME" query-param="DEPARTURE_TIME"/>
+            <with-param name="VELOCITY" query-param="VELOCITY"/>
+            <with-param name="OUTER_ELEVATION" query-param="OUTER_ELEVATION"/>
+            <with-param name="CURVATURE" query-param="CURVATURE"/>
+            <with-param name="WINDOW_ID" query-param="WINDOW_ID"/>
+        </call-query>
+    </resource>
+    <resource method="PUT" path="/records">
+        <call-query href="update_SENSORS_DATA_query">
+            <with-param name="SENSOR_POST" query-param="SENSOR_POST"/>
+            <with-param name="TRAIN_ID" query-param="TRAIN_ID"/>
+            <with-param name="DEPARTURE_TIME" query-param="DEPARTURE_TIME"/>
+            <with-param name="VELOCITY" query-param="VELOCITY"/>
+            <with-param name="OUTER_ELEVATION" query-param="OUTER_ELEVATION"/>
+            <with-param name="CURVATURE" query-param="CURVATURE"/>
+            <with-param name="WINDOW_ID" query-param="WINDOW_ID"/>
+            <with-param name="RECORD_ID" query-param="RECORD_ID"/>
+        </call-query>
+    </resource>
+    <resource method="GET" path="/records/{RECORD_ID}">
+        <call-query href="select_with_key_SENSORS_DATA_query">
+            <with-param name="RECORD_ID" query-param="RECORD_ID"/>
+        </call-query>
+    </resource>
+    <resource method="DELETE" path="/records/{RECORD_ID}">
+        <call-query href="delete_SENSORS_DATA_query">
+            <with-param name="RECORD_ID" query-param="RECORD_ID"/>
+        </call-query>
+    </resource>
+    <resource method="GET" path="/records">
+        <call-query href="select_all_SENSORS_DATA_query"/>
+    </resource>
+</data>
