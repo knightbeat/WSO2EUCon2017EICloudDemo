@@ -1,32 +1,7 @@
-# Hello Service Sample
+# How to run the service
 
-This is the MSF4J Hello World sample that reponds to you saying hello.
+`java -Dhttp.port=8081 -jar WSO2EUTrainsDelayChecker-2.4.3-SNAPSHOT.jar`
 
-## How to build the sample
+## How to try the service
 
-From this directory, run
-
-```
-mvn clean install
-```
-
-## How to run the sample
-
-From the target directory, run
-```
-java -jar helloworld-*.jar
-```
-
-## How to test the sample
-
-We will use the cURL command line tool for testing. You can use your preferred HTTP or REST client too.
-
-```
-curl http://localhost:8080/hello/wso2
-```
-
-You should get a response similar to the following:
-
-```
-Hello wso2
-```
+http://localhost:8081/delay-checker/sensor-event?trainID=EST182&departureTime=0510&sensorPost=KET-035
