@@ -1,32 +1,13 @@
-# Hello Service Sample
+# Risk-events analyser microservice
 
-This is the MSF4J Hello World sample that reponds to you saying hello.
+The velocity of a train is provided against the curvature and outer elevation of a particular curve on a rail track. Then the service is supposed to provide a response similar to,
 
-## How to build the sample
+`{"risk":true,"requiredSpeed":84.51542547285166,"maximumSpeed":200.0}`
 
-From this directory, run
+## How to run the service
 
-```
-mvn clean install
-```
+`java -Dhttp.port=8082 -jar WSO2EUTrainsRiskEventsChecker-2.4.3-SNAPSHOT.jar`
 
-## How to run the sample
+## How to try the service
 
-From the target directory, run
-```
-java -jar helloworld-*.jar
-```
-
-## How to test the sample
-
-We will use the cURL command line tool for testing. You can use your preferred HTTP or REST client too.
-
-```
-curl http://localhost:8080/hello/wso2
-```
-
-You should get a response similar to the following:
-
-```
-Hello wso2
-```
+http://localhost:8082/risk-events/velocity?velocity=80&outerElevation=2&curvature=1
