@@ -9,10 +9,10 @@
     expression="fn:concat(get-property('message-2'), get-property('message-3'))"
     name="Tweet" scope="default" type="STRING"/>
   <twitter.init>
-    <consumerKey>dVZ8GU1c2cmMzPyCdbaH03rZ6</consumerKey>
-    <consumerSecret>3ohtddYdPmmnTW5h00Xgogzl315VSoPVvfXUVO9T9afKVKkwPy</consumerSecret>
-    <accessToken>926503614046187520-BcX0wYd80VKKXP11pPy44durLTN48MN</accessToken>
-    <accessTokenSecret>9BIZBERiXqvDEVU4nD6oMIoFmqjtIZ32i7oaMOpm0Q5Qy</accessTokenSecret>
+    <consumerKey>**</consumerKey>
+    <consumerSecret>**</consumerSecret>
+    <accessToken>**</accessToken>
+    <accessTokenSecret>**</accessTokenSecret>
   </twitter.init>
   <twitter.updateStatus>
     <status>{$ctx:Tweet}</status>
